@@ -1,0 +1,53 @@
+/* Import Tailwind v4 */
+@import "tailwindcss";
+
+/* 1. Import your requested Sora font */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap');
+
+/* 2. Configure class-based dark mode 
+   (This tells the dark: modifier to look for the .dark class on the html element) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 3. Define the Zorvyn theme variables */
+@theme {
+  --font-sora: 'Sora', sans-serif;
+
+  /* Zorvyn Brand Colors */
+  --color-zorvyn-light: #E2E8F0;
+  --color-zorvyn-dark: #0F172A;
+  --color-zorvyn-teal: #2C7A7B;
+  --color-zorvyn-accent: #38B2AC;
+  --color-zorvyn-danger: #E53E3E;
+  --color-zorvyn-success: #38A169;
+}
+
+/* 4. Base Layer Styles (Optional but helpful for setting global defaults) */
+@layer base {
+  body {
+    /* Standard light mode background and text */
+    @apply font-sora bg-slate-50 text-slate-900 transition-colors duration-300;
+  }
+  
+  .dark body {
+    /* Standard dark mode background and text */
+    @apply bg-slate-900 text-slate-100;
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 18px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-zorvyn-light);
+  border-radius: 10px;
+}
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #334155; /* Tailwind slate-700 */
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-zorvyn-accent);
+}

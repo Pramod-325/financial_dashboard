@@ -1,8 +1,7 @@
-/* Import Tailwind v4 */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap');
 @import "tailwindcss";
 
 /* 1. Import your requested Sora font */
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap');
 
 /* 2. Configure class-based dark mode 
    (This tells the dark: modifier to look for the .dark class on the html element) */

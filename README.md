@@ -1,75 +1,150 @@
-# React + TypeScript + Vite
+# 💸 Zorvyn Finance Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean, interactive, and responsive personal finance tracking dashboard built to evaluate frontend architecture, UI/UX design, and state management. Designed with a custom **"Zorvyn"** fintech aesthetic.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🎯 Objective
 
-## React Compiler
+To provide users with an intuitive interface to track their financial activity, view overall summaries, explore transactions, and understand basic spending patterns through visual data and smart insights.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## ✨ Core Features
 
-## Expanding the ESLint configuration
+### 📊 Dashboard Overview
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Financial Summary Cards:** Quick-glance cards displaying Total Balance, Income, and Expenses.
+- **Visualizations:**
+  - *Time-Based Trend:* Line/Area charts showing balance and income/expense trends over time.
+  - *Categorical Breakdown:* Pie/Donut charts illustrating spending habits by category.
+- **Smart Insights:** Auto-generated observations such as the highest spending category and monthly comparisons.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 💳 Transaction Management
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Detailed List:** View transactions with Date, Amount, Category, and Type (Income/Expense).
+- **Data Controls:** Integrated search and simple filtering/sorting to easily navigate financial history.
+- **Empty States:** Graceful handling of edge cases when no data or search results are found.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 🔐 Simulated Role-Based Access Control (RBAC)
+
+Toggle between simulated user roles directly from the UI:
+
+| Role       | Access Level                                                         |
+|------------|----------------------------------------------------------------------|
+| **Viewer** | Read-only access to dashboard data and transaction history.          |
+| **Admin**  | Full access, including the ability to add and edit mock transactions. |
+
+### 🎵 Auditory UX *(Unique Feature)*
+
+- **Interactive Sounds:** Custom audio feedback for UI clicks and interactions.
+- **Contextual Alerts:** Distinct sounds for specific financial scenarios:
+  - 🎉 Celebratory laugh for high profits.
+  - 🔔 Dull/alert sound for negative balances or heavy losses.
+  - 💵 Satisfying cash sound when adding income.
+
+---
+
+## 🛠️ Technical Stack
+
+| Layer                | Technology                                                                 |
+|----------------------|----------------------------------------------------------------------------|
+| **Framework**        | React.js with TypeScript *(Strict mode enabled)*                           |
+| **Styling**          | Tailwind CSS — Custom "Zorvyn" dark/light fintech palette, `Sora` font     |
+| **Data Visualization** | MUI Charts / ApexCharts *(based on Syncfusion financial chart best practices)* |
+| **State Management** | React Context API / Custom Hooks                                           |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Ensure you have [Node.js](https://nodejs.org/) installed on your machine.
+
+### Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/Pramod-325/financial_dashboard.git
+   cd finance-dashboard
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser:**
+   Navigate to `http://localhost:5173`
+
+---
+
+## 📐 Architecture & Best Practices
+
+- **Modularity:** UI components are broken down into small, reusable pieces (e.g., `SummaryCard`, `TransactionRow`, `ChartWidget`).
+- **Responsiveness:** Fluid layouts that adapt beautifully across mobile, tablet, and desktop viewports using CSS Grid and Flexbox.
+- **Abstraction:** Business logic, state management, and audio handling are decoupled from presentation components for easier scaling and maintenance.
+
+---
+
+## 📁 Project Structure
+
+```
+zorvyn-finance-dashboard/
+├── public/
+│   └── sounds/              # Auditory UX assets
+├── src/
+│   ├── components/
+│   │   ├── SummaryCard/     # Financial summary cards
+│   │   ├── TransactionRow/  # Individual transaction items
+│   │   └── ChartWidget/     # Chart visualizations
+│   ├── context/             # React Context providers
+│   ├── hooks/               # Custom React hooks
+│   ├── pages/
+│   │   ├── Dashboard/       # Main overview page
+│   │   └── Transactions/    # Transaction history page
+│   ├── utils/               # Helpers & mock data generators
+│   └── App.tsx
+├── tailwind.config.ts
+├── tsconfig.json
+└── package.json
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🌟 Feature Checklist
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Feature                              | Status |
+|--------------------------------------|--------|
+| Highly Responsive Design            | ✅ Done |
+| Dark / Light Mode Toggle             | ✅ Done |
+| Mock API Integration / Simulated Data | ✅ Done |
+| UI Animations & Transitions          | ✅ Done |
+| Data Persistence (Local Storage)     | 🔲 Planned |
+| Export Functionality (CSV / JSON)    | 🔲 Planned |
+
+---
+
+## 📸 Screenshots
+
+<img src="https://github.com/Pramod-325/financial_dashboard/blob/main/screenshots/Screenshot-1.png"/>
+<img src="https://github.com/Pramod-325/financial_dashboard/blob/main/screenshots/Screenshot-2.png"/>
+<img src="https://github.com/Pramod-325/financial_dashboard/blob/main/screenshots/Screenshot-3.png"/>
+
+---
+
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---

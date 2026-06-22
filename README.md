@@ -1,6 +1,6 @@
-# 💸 Zorvyn Finance Dashboard
+# 💸  Finance Dashboard
 
-A clean, interactive, and responsive personal finance tracking dashboard built to evaluate frontend architecture, UI/UX design, and state management. Designed with a custom **"Zorvyn"** fintech aesthetic.
+A clean, interactive, and responsive personal finance tracking dashboard built to evaluate frontend architecture, UI/UX design, and state management. Designed with a custom **""** fintech aesthetic.
 
 ---
 
@@ -54,7 +54,7 @@ Toggle between simulated user roles directly from the UI:
 | Layer                | Technology                                                                 |
 |----------------------|----------------------------------------------------------------------------|
 | **Framework**        | React.js with TypeScript *(Strict mode enabled)*                           |
-| **Styling**          | Tailwind CSS — Custom "Zorvyn" dark/light fintech palette, `Sora` font     |
+| **Styling**          | Tailwind CSS — Custom "" dark/light fintech palette, `Sora` font     |
 | **Data Visualization** | MUI Charts / ApexCharts *(based on Syncfusion financial chart best practices)* |
 | **State Management** | React Context API / Custom Hooks                                           |
 
@@ -103,7 +103,7 @@ Ensure you have [Node.js](https://nodejs.org/) installed on your machine.
 ## 📁 Project Structure
 
 ```
-zorvyn-finance-dashboard/
+finance-dashboard/
 ├── public/
 │   └── sounds/              # Auditory UX assets
 ├── src/
